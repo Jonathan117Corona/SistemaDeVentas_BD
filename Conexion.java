@@ -1,22 +1,18 @@
-package conexion;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.DriverManager;
+package Conector;
+
 /**
  *
- * @author Edgar JPC (Yacu)
+ * @author jonat
  */
 public class Conexion {
-   
-    //conexion local
-    public static Connection conectar(){
-        
-        try{
-        
-          Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/bd_sistema_ventas","root","02062019");
-          return cn;   
-        }catch (SQLException e){
-            System.out.println("Error em la conexion local" + e);
-        }return null;
+
+    public static java.sql.Connection conectar() {
+        try {
+            java.sql.Connection conexion = java.sql.DriverManager.getConnection("jdbc:mysql//localhost/bd_sistema_ventas", " root", "");
+            return conexion;
+        } catch (java.sql.SQLException e) {
+            javax.swing.JOptionPane.showMessageDialog(null, "Error en la conexion: " + e);
+        }
+        return null;
     }
 }
